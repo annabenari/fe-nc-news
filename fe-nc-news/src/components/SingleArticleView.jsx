@@ -24,12 +24,6 @@ function SingleArticleView() {
     return <p>Loading...</p>;
   }
 
-  if (article === null) {
-    return <p>Error: Unable to fetch article.</p>;
-  }
-
-  console.log(article);
-
   return (
     <article className="singleCard">
       <h2 className="title">{article.title}</h2>

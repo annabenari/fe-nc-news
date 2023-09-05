@@ -17,7 +17,7 @@ export const ArticlesView = () => {
   }, []);
 
   return (
-    <div>
+    <article>
       <section className="card">
         {articles.map(
           ({
@@ -49,6 +49,6 @@ export const ArticlesView = () => {
           }
         )}
       </section>
-    </div>
+    </article>
   );
 };

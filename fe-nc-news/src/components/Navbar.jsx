@@ -10,12 +10,6 @@ export const Navbar = () => {
         <li>
           <Link to="/articles">Articles</Link>
         </li>
-        {/* <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-        <li>
-          <Link to="/users">Users</Link>
-        </li> */}
       </ul>
     </nav>
   );
