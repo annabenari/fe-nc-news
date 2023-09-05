@@ -1,0 +1,81 @@
+:root {
+  --primary-bg-color: #CB9173;
+  --secondary-bg-color: #EFF2C0;
+  --link-color: #172815;
+  --link-hover-bg-color: #CB9173;
+  --link-color: #217074;
+}
+
+body {
+  font-family: "Raleway";
+}
+
+a{
+  color: var(--link-color);
+}
+
+.singleCard, .allArticles {
+  width: auto;
+  height: auto;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-bg-color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allArticles {
+  width: 40rem;
+  height: 15rem; 
+  border: 0.1rem solid;
+  border-color: #BD724C;
+  margin-bottom: 20px;
+}
+
+.smallp {
+  font-size: 0.65rem;
+  line-height: 0.3rem;
+}
+
+ul {
+  width: auto;
+  list-style-type: none;
+  padding: 0;
+  background-color: var(--secondary-bg-color);
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  text-decoration: none;
+  color: var(--link-color);
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+ul:hover {
+  background-color: var(--link-hover-bg-color);
+  color: white;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-bg-color);
+  color: #172815;
+  border-radius: 3px;
+}
