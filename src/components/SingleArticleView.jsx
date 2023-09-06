@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { getArticleId } from "../Utilis/api";
 import { useParams } from "react-router";
+import Comments from "./Comments";
 
 function SingleArticleView() {
   const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(true);
+  const [showComments, setShowComments] = useState(false);
 
   const { article_id } = useParams();
 
@@ -33,6 +35,10 @@ function SingleArticleView() {
       <p className="smallp">Written by {article.author}</p>
       <p className="smallp">Created at {article.created_at}</p>
       <p className="smallp">Comments {article.comment_count}</p>
+      <button onClick={() => setShowComments(!showComments)}>
+        {showComments ? "Hide Comments" : "Show Comments"}
+      </button>
+      {showComments && <Comments article_id={article_id} />}
     </article>
   );
 }

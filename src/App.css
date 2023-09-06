@@ -14,7 +14,7 @@ a{
   color: var(--link-color);
 }
 
-.singleCard, .allArticles {
+.singleCard, .allArticles, .commentCard {
   width: auto;
   height: auto;
   font-size: 0.9rem;
@@ -47,7 +47,7 @@ a{
   line-height: 0.3rem;
 }
 
-ul {
+.navBar {
   width: auto;
   list-style-type: none;
   padding: 0;
@@ -59,9 +59,10 @@ ul {
   padding: 5px 10px;
   border-radius: 3px;
   transition: background-color 0.3s ease;
+  margin-bottom: 20px;
 }
 
-ul:hover {
+.navBar:hover {
   background-color: var(--link-hover-bg-color);
   color: white;
 }
@@ -78,4 +79,23 @@ ul li {
   background-color: var(--primary-bg-color);
   color: #172815;
   border-radius: 3px;
+}
+
+
+.commentBody{
+  font-size: 0.8rem;
+}
+
+.commentCard{
+  background-color: var( --secondary-bg-color);
+}
+
+.commentCard {
+  background-color: var(--secondary-bg-color);
+  text-align: center; 
+  text-decoration: none;
+  color: var(--link-color);
+  border-radius: 3px;
+  padding: 5px 10px;
+  border: 1px solid var(--link-color);
 }
