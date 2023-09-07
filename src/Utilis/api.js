@@ -27,10 +27,10 @@ export const getArticleId = (id) => {
     });
 };
 
-export const getComments = (id) => {
+export const getComments = (article_id) => {
   const endpoint = "/api/articles";
   return axios
-    .get(`${BASE_URL}${endpoint}/`, { id }, `/comments`)
+    .get(`${BASE_URL}${endpoint}/${article_id}/comments`)
     .then((response) => {
       return response.data.comments;
     })
@@ -39,16 +39,12 @@ export const getComments = (id) => {
     });
 };
 
-export const voteArticle = (id, inc_vote) => {
+export const voteArticle = (article_id, inc_vote) => {
   const endpoint = "/api/articles";
   return axios
-    .patch(
-      `${BASE_URL}${endpoint}/`,
-      { id },
-      {
-        inc_votes: inc_vote === "upvote" ? 1 : -1,
-      }
-    )
+    .patch(`${BASE_URL}${endpoint}/${article_id}`, {
+      inc_votes: inc_vote === "like" ? 1 : -1,
+    })
     .then((response) => {
       return response.data.articles;
     })
