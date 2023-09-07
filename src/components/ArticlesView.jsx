@@ -5,14 +5,21 @@ import { Link } from "react-router-dom";
 
 export const ArticlesView = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getArticles()
       .then((data) => {
         setArticles(data);
+        setLoading(false);
       })
       .catch((err) => console.log(err));
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <article>
