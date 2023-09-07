@@ -99,3 +99,15 @@ ul li {
   padding: 5px 10px;
   border: 1px solid var(--link-color);
 }
+
+
+button {
+    background-color:#172815;
+    color: #EFF2C0;
+    border:none; 
+    border-radius:10px; 
+    margin: 3px;
+    padding:3px;
+    min-height:5px; 
+    min-width: 10px;
+}
