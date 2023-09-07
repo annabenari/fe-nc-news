@@ -18,8 +18,6 @@ function Comments({ article_id }) {
       });
   }, [article_id]);
 
-  console.log("State comments:", comments);
-
   if (loading) {
     return <p>Loading comments...</p>;
   }
@@ -33,6 +31,7 @@ function Comments({ article_id }) {
               <p className="commentBody">{comment.body}</p>
               <p className="smallp">Posted by: {comment.author}</p>
               <p className="smallp">Posted at: {comment.created_at}</p>
+              <p className="smallp">Votes: {comment.votes}</p>
             </section>
           </li>
         ))}
