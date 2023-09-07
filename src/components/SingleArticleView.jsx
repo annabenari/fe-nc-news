@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getArticleId } from "../Utilis/api";
 import { useParams } from "react-router";
 import Comments from "./Comments";
+import Vote from "./Vote";
 
 function SingleArticleView() {
+  const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(true);
   const [showComments, setShowComments] = useState(false);
-
-  const { article_id } = useParams();
 
   useEffect(() => {
     getArticleId(article_id)
@@ -34,7 +34,7 @@ function SingleArticleView() {
       <p>{article.body}</p>
       <p className="smallp">Written by {article.author}</p>
       <p className="smallp">Created at {article.created_at}</p>
-      <p className="smallp">Comments {article.comment_count}</p>
+      <Vote article_id={article_id} initialVotes={article.votes} />
       <button onClick={() => setShowComments(!showComments)}>
         {showComments ? "Hide Comments" : "Show Comments"}
       </button>

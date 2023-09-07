@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
-import { getArticle } from "../Utilis/api";
+import { getArticles } from "../Utilis/api";
 import { ArticleCard } from "./ArticleCard";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ArticlesView = () => {
   const [articles, setArticles] = useState([]);
 
-  const { article_id } = useParams();
-
   useEffect(() => {
-    getArticle(article_id)
+    getArticles()
       .then((data) => {
         setArticles(data);
       })
