@@ -3,8 +3,9 @@ import { getArticleId } from "../Utilis/api";
 import { useParams } from "react-router";
 import Comments from "./Comments";
 import Vote from "./Vote";
+import CommentForm from "./PostComment";
 
-function SingleArticleView() {
+function SingleArticleView(commentData) {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(true);
@@ -35,6 +36,7 @@ function SingleArticleView() {
       <p className="smallp">Written by {article.author}</p>
       <p className="smallp">Created at {article.created_at}</p>
       <Vote article_id={article_id} initialVotes={article.votes} />
+      <CommentForm article_id={article_id} />
       <button onClick={() => setShowComments(!showComments)}>
         {showComments ? "Hide Comments" : "Show Comments"}
       </button>

@@ -52,3 +52,15 @@ export const voteArticle = (article_id, inc_vote) => {
       console.error("Error fetching articles:", error);
     });
 };
+
+export const postComment = (article_id, commentData) => {
+  const endpoint = "/api/articles";
+  return axios
+    .post(`${BASE_URL}${endpoint}/${article_id}/comments`, commentData)
+    .then((response) => {
+      return response.data.comments;
+    })
+    .catch((error) => {
+      console.error("Error posting articles:", error);
+    });
+};
