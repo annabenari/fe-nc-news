@@ -17,10 +17,9 @@ export const getArticles = () => {
 export const getArticleId = (id) => {
   const endpoint = "/api/articles";
   return axios
-    .get(`${BASE_URL}${endpoint}/`, { id })
+    .get(`${BASE_URL}${endpoint}/${id}`)
     .then((response) => {
-      console.log(response.data.articles);
-      return response.data.articles;
+      return response.data.article;
     })
     .catch((error) => {
       console.error("Error fetching articles:", error);
@@ -59,6 +58,31 @@ export const postComment = (article_id, commentData) => {
     .post(`${BASE_URL}${endpoint}/${article_id}/comments`, commentData)
     .then((response) => {
       return response.data.comments;
+    })
+    .catch((error) => {
+      console.error("Error posting articles:", error);
+    });
+};
+
+export const getTopics = () => {
+  const endpoint = "/api";
+  return axios
+    .get(`${BASE_URL}${endpoint}/topics`)
+    .then((response) => {
+      return response.data.topics;
+    })
+    .catch((error) => {
+      console.error("Error posting articles:", error);
+    });
+};
+
+export const getOneTopic = (topic) => {
+  const endpoint = "/api/articles/";
+
+  return axios
+    .get(`${BASE_URL}${endpoint}?topic=${topic}`)
+    .then((response) => {
+      return response.data.articles;
     })
     .catch((error) => {
       console.error("Error posting articles:", error);
