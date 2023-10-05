@@ -1,20 +1,21 @@
 :root {
   --primary-bg-color: #CB9173;
   --secondary-bg-color: #EFF2C0;
-  --link-color: #172815;
-  --link-hover-bg-color: #CB9173;
   --link-color: #217074;
+  --link-hover-bg-color: #CB9173;
 }
 
 body {
-  font-family: "Raleway";
+  font-family: "Roboto", sans-serif;
 }
 
-a{
+a {
   color: var(--link-color);
 }
 
-.singleCard, .allArticles, .commentCard {
+.singleCard,
+.allArticles,
+.commentCard {
   width: auto;
   height: auto;
   font-size: 0.9rem;
@@ -36,7 +37,7 @@ a{
 
 .allArticles {
   width: 40rem;
-  height: 15rem; 
+  height: 15rem;
   border: 0.1rem solid;
   border-color: #BD724C;
   margin-bottom: 20px;
@@ -81,18 +82,17 @@ ul li {
   border-radius: 3px;
 }
 
-
-.commentBody{
+.commentBody {
   font-size: 0.8rem;
-}
-
-.commentCard{
-  background-color: var( --secondary-bg-color);
 }
 
 .commentCard {
   background-color: var(--secondary-bg-color);
-  text-align: center; 
+}
+
+.commentCard {
+  background-color: var(--secondary-bg-color);
+  text-align: center;
   text-decoration: none;
   color: var(--link-color);
   border-radius: 3px;
@@ -100,14 +100,20 @@ ul li {
   border: 1px solid var(--link-color);
 }
 
-
 button {
-    background-color:#172815;
-    color: #EFF2C0;
-    border:none; 
-    border-radius:10px; 
-    margin: 3px;
-    padding:3px;
-    min-height:5px; 
-    min-width: 10px;
+  background-color: #172815;
+  color: #EFF2C0;
+  border: none;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 6px 12px;
+  min-height: 30px;
+  min-width: 70px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--link-hover-bg-color);
+  transform: scale(1.05);
 }
